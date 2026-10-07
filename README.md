@@ -1,6 +1,6 @@
 # DEEPSCAN — sitio web
 
-Sitio de deepscan.com.co en Next.js (App Router), desplegado en Vercel.
+Sitio de deepscan.com.co en Next.js (App Router), exportado como sitio estático y desplegado en Cloudflare Pages (gratis, uso comercial permitido).
 
 ## Desarrollo
 
@@ -19,9 +19,15 @@ npm run dev   # http://localhost:3100
 - `lib/journey.js` — recorrido 3D de "Respaldo oficial" (Three.js)
 - `public/assets/` — logos, sellos e imágenes
 
+## Despliegue (Cloudflare Pages)
+
+- Comando de build: `npm run build`
+- Carpeta de salida: `out`
+- Variable de entorno: `NODE_VERSION=22`
+
 ## Flujo de trabajo
 
-Cada cambio va en una rama → Vercel genera un link de preview → se revisa en claro/oscuro y móvil → recién ahí se fusiona a `main`.
+Cada cambio va en una rama → Cloudflare Pages genera un link de preview → se revisa en claro/oscuro y móvil → recién ahí se fusiona a `main`.
 
 ## Antes de producción
 
