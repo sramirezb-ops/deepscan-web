@@ -80,9 +80,32 @@ async function handleContacto(request, env) {
   return json({ ok: true });
 }
 
+// Páginas del WordPress anterior → su sección en el sitio nuevo (301 para conservar el SEO).
+const REDIRECTS = {
+  '/servicios/': '/#servicios',
+  '/casos-de-exito/': '/#casos',
+  '/metodo/': '/#como-trabajamos',
+  '/contacto/': '/#contacto',
+  '/thank-you/': '/',
+  '/hola-mundo/': '/',
+};
+// Entradas de ejemplo que traía la plantilla de WordPress: se mandan al inicio.
+const OLD_DEMO_POSTS = /^\/(creativo-jovenes-a-lead-designers|definitive-guide-to-make-a-daily|the-highly-creative-ui-ux-workflow)[^/]*\/?$/;
+
 export default {
   async fetch(request, env) {
     const url = new URL(request.url);
+
+    // www.deepscan.com.co → deepscan.com.co
+    if (url.hostname.startsWith('www.')) {
+      url.hostname = url.hostname.slice(4);
+      return Response.redirect(url.toString(), 301);
+    }
+
+    const path = url.pathname.endsWith('/') ? url.pathname : `${url.pathname}/`;
+    if (REDIRECTS[path]) return Response.redirect(new URL(REDIRECTS[path], url.origin).toString(), 301);
+    if (OLD_DEMO_POSTS.test(url.pathname)) return Response.redirect(new URL('/', url.origin).toString(), 301);
+
     if (url.pathname === '/api/contacto') {
       if (request.method !== 'POST') return json({ ok: false, error: 'Método no permitido.' }, 405);
       return handleContacto(request, env);
