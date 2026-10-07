@@ -1,0 +1,10 @@
+// Configuración de Cloudflare Workers: sirve el sitio estático generado en out/
+{
+  "name": "deepscan-web",
+  "compatibility_date": "2026-10-01",
+  "assets": {
+    "directory": "./out",
+    "not_found_handling": "404-page"
+  },
+  "preview_urls": true
+}
