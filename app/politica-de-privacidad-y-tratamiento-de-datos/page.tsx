@@ -47,7 +47,7 @@ export default function Politica() {
           <li>{"Revocar la autorización o solicitar la supresión del dato cuando se considere que no se respetan los principios y derechos constitucionales y legales."}</li>
           </ul>
           <h2>{"5. Mecanismos para el Ejercicio de los Derechos"}</h2>
-          <p>{"Para ejercer sus derechos, el titular podrá enviar una solicitud al correo electrónico de contacto info@deepscan.co, indicando claramente el derecho que desea ejercer. DEEPSCAN SAS responderá dicha solicitud en los términos legales establecidos."}</p>
+          <p>{"Para ejercer sus derechos, el titular podrá enviar una solicitud al correo electrónico de contacto info@deepscan.com.co, indicando claramente el derecho que desea ejercer. DEEPSCAN SAS responderá dicha solicitud en los términos legales establecidos."}</p>
           <h2>{"6. Seguridad de la Información"}</h2>
           <p>{"DEEPSCAN SAS ha implementado las medidas técnicas, humanas y administrativas necesarias para garantizar la seguridad de los datos personales y evitar su adulteración, pérdida, consulta, uso o acceso no autorizado."}</p>
           <h2>{"7. Vigencia y Modificación de la Política de Privacidad"}</h2>
