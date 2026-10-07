@@ -96,6 +96,10 @@ export default {
   async fetch(request, env) {
     const url = new URL(request.url);
 
+    // Hub interno y WordPress siguen en Hostinger: estas rutas pasan directo al servidor de origen.
+    // (En una ruta de Cloudflare, fetch() hacia el mismo dominio va al origen, no vuelve a este Worker.)
+    if (/^\/(panel|wp-)/.test(url.pathname) && !url.hostname.endsWith('.workers.dev')) return fetch(request);
+
     // www.deepscan.com.co → deepscan.com.co
     if (url.hostname.startsWith('www.')) {
       url.hostname = url.hostname.slice(4);

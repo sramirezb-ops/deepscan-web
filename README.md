@@ -40,7 +40,7 @@ Cada cambio va en una rama → Cloudflare genera un link de preview → se revis
 
 Lo que aún no tiene dato real está escondido con CSS (bloque "Modo lanzamiento" en `app/globals.css`): fichas de casos, vitrina de anuncios de ejemplo, enlaces "Verificar" y LinkedIn vacíos. Al completar cada dato se quita de esa regla.
 
-El worker redirige las URLs del WordPress anterior (`/servicios/`, `/casos-de-exito/`, `/metodo/`, `/contacto/`, entradas de ejemplo) y `www` → dominio principal. `/panel/` (Hub) se excluye con una ruta de Cloudflare sin worker.
+El worker redirige las URLs del WordPress anterior (`/servicios/`, `/casos-de-exito/`, `/metodo/`, `/contacto/`, entradas de ejemplo) y `www` → dominio principal. `/panel*` (Hub) y `/wp-*` (WordPress) pasan directo a Hostinger desde el propio worker (`fetch(request)` al origen).
 
 ## Antes de producción
 
