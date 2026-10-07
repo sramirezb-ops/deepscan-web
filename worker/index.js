@@ -96,6 +96,11 @@ export default {
   async fetch(request, env) {
     const url = new URL(request.url);
 
+    // Mapas del sitio del WordPress anterior → mapa nuevo (Google solo debe ver el sitio actual).
+    if (/^\/(wp-sitemap|sitemap_index|page-sitemap|post-sitemap)[^/]*\.xml$/.test(url.pathname)) {
+      return Response.redirect(new URL('/sitemap.xml', url.origin).toString(), 301);
+    }
+
     // Hub interno y WordPress siguen en Hostinger: estas rutas pasan directo al servidor de origen.
     // (En una ruta de Cloudflare, fetch() hacia el mismo dominio va al origen, no vuelve a este Worker.)
     if (/^\/(panel|wp-)/.test(url.pathname) && !url.hostname.endsWith('.workers.dev')) return fetch(request);
