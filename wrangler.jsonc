@@ -2,6 +2,8 @@
 {
   "name": "deepscan-web",
   "main": "worker/index.js",
+  // Compila el sitio (genera out/) antes de cada despliegue, aunque el panel no tenga comando de build.
+  "build": { "command": "npm run build" },
   "compatibility_date": "2026-10-01",
   "assets": {
     "directory": "./out",
