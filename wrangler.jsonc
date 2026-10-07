@@ -1,10 +1,19 @@
-// Configuración de Cloudflare Workers: sirve el sitio estático generado en out/
+// Configuración de Cloudflare Workers: sirve el sitio estático de out/ y la API del formulario.
 {
   "name": "deepscan-web",
+  "main": "worker/index.js",
   "compatibility_date": "2026-10-01",
   "assets": {
     "directory": "./out",
-    "not_found_handling": "404-page"
+    "binding": "ASSETS",
+    "not_found_handling": "404-page",
+    "run_worker_first": ["/api/*"]
   },
-  "preview_urls": true
+  "preview_urls": true,
+  "observability": { "enabled": true },
+  // NOTION_TOKEN es secreto: se configura en el panel de Cloudflare (Settings → Variables and Secrets).
+  "vars": {
+    "NOTION_DB_ID": "cc902ded-eb11-44aa-9e39-f7efea59a8c4",
+    "NOTION_OWNER_ID": "75601964-48ae-4af1-be04-a13e2c1196c9"
+  }
 }

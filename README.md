@@ -26,6 +26,12 @@ npm run dev   # http://localhost:3100
 - Comando de despliegue: `npx wrangler deploy`
 - Despliegue de ramas (preview): `npx wrangler versions upload`
 
+## Formulario de contacto
+
+`worker/index.js` recibe `POST /api/contacto` y crea una fila en la base de Notion **Prospectos web** (estado "Nuevo", con responsable asignado). Necesita el secreto `NOTION_TOKEN` en Cloudflare (Settings → Variables and Secrets); `NOTION_DB_ID` y `NOTION_OWNER_ID` están en `wrangler.jsonc`. Incluye trampa para bots y validación de datos.
+
+Probar en local: `npm run build && npx wrangler dev`.
+
 ## Flujo de trabajo
 
 Cada cambio va en una rama → Cloudflare genera un link de preview → se revisa en claro/oscuro y móvil → recién ahí se fusiona a `main`.
@@ -33,5 +39,4 @@ Cada cambio va en una rama → Cloudflare genera un link de preview → se revis
 ## Antes de producción
 
 - Completar los pendientes (botón amarillo "Pendientes" en la página) y quitar ese botón.
-- Conectar el formulario de contacto (hoy no envía datos).
 - Quitar `window.__lenis` (solo para pruebas).

@@ -901,3 +901,10 @@ button{font:inherit;color:inherit;background:none;border:0;cursor:pointer}
   .rv,.lines .ln>span{opacity:1;transform:none}
   .scan::after{clip-path:none}
 }
+
+/* Formulario conectado */
+.hp{position:absolute;left:-9999px;width:1px;height:1px;overflow:hidden}
+.form-error{margin-top:18px;padding:12px 14px;border-radius:12px;background:rgba(220,38,38,.08);border:1px solid rgba(220,38,38,.3);color:#b91c1c;font-size:14px}
+.form-error a{color:inherit;font-weight:600;text-decoration:underline}
+.done .btn{margin-top:22px}
+#next[aria-busy="true"]{opacity:.6;pointer-events:none}
