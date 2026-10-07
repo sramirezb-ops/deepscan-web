@@ -53,7 +53,7 @@ export default function Politica() {
           <h2>{"7. Vigencia y Modificación de la Política de Privacidad"}</h2>
           <p>{"DEEPSCAN SAS se reserva el derecho de modificar esta política en cualquier momento, siempre cumpliendo con las disposiciones legales vigentes. Las modificaciones serán publicadas oportunamente en nuestro sitio web."}</p>
           <p>{"Fecha de entrada en vigor: 16/09/2024."}</p>
-          <p>{"Si tienes alguna duda o consulta sobre nuestra Política de Privacidad, puedes contactarnos a través del correo electrónico info@deepscan.co."}</p>
+          <p>{"Si tienes alguna duda o consulta sobre nuestra Política de Privacidad, puedes contactarnos a través del correo electrónico info@deepscan.com.co."}</p>
         </article>
         <a className="legal-back" href="/">← Volver al inicio</a>
       </div>
