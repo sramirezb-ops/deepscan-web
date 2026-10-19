@@ -61,13 +61,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           as="style"
           href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600;700&family=Archivo:wght@800&display=swap"
         />
-        <link
-          rel="stylesheet"
-          media="print"
-          id="dash-fonts"
-          href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600;700&family=Archivo:wght@800&display=swap"
-        />
-        <script dangerouslySetInnerHTML={{ __html: "document.getElementById('dash-fonts').media='all'" }} />
+        <script dangerouslySetInnerHTML={{ __html: "(function(){var l=document.createElement('link');l.rel='stylesheet';l.href='https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600;700&family=Archivo:wght@800&display=swap';document.head.appendChild(l)})()" }} />
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
       </head>
       <body className="loading" suppressHydrationWarning>
