@@ -1205,3 +1205,45 @@ button{font:inherit;color:inherit;background:none;border:0;cursor:pointer}
 .dx-heat .dl{align-self:center}
 .dx-heat>span{text-align:left}
 @media (max-width:900px){ .dx-g21,.dx-g12,.dx-g11{grid-template-columns:1fr} .dx-app{height:680px} .dx-fun .f{grid-template-columns:100px 1fr 46px 40px} }
+
+/* ===== Contacto en oscuro con formulario tipo tarjeta ===== */
+.contact.cx{position:relative;overflow:hidden;background:#060607;color:var(--white)}
+.contact.cx::before{content:"";position:absolute;right:-10%;top:50%;width:min(1000px,110vw);height:min(1000px,110vw);transform:translateY(-50%);background:radial-gradient(circle,rgba(139,92,246,.22),rgba(139,92,246,.05) 45%,transparent 68%);pointer-events:none}
+.contact.cx .wrap{position:relative;align-items:center}
+.contact.cx .eyebrow{color:var(--muted-d)}
+.contact.cx .cs-t{margin:24px 0 20px;max-width:12ch}
+.contact.cx .cs-t .g{background:linear-gradient(90deg,#c4b5fd,#8b5cf6 60%,#a78bfa);-webkit-background-clip:text;background-clip:text;color:transparent}
+.contact.cx .side p{color:var(--muted-d)}
+.contact.cx .steps-info{border-color:rgba(255,255,255,.1)}
+.contact.cx .steps-info div{border-color:rgba(255,255,255,.1)}
+.contact.cx .steps-info b{color:var(--acc-2)}
+.contact.cx .steps-info span{color:rgba(255,255,255,.8)}
+.cx-trust{display:flex;flex-wrap:wrap;gap:8px 18px;margin:22px 0 4px;font-size:13px;color:var(--muted-d)}
+.cx-trust span{display:inline-flex;align-items:center;gap:8px}
+.cx-trust i{width:7px;height:7px;border-radius:50%;background:#22d97a;box-shadow:0 0 8px #22d97a}
+.contact.cx .wa-alt{color:#fafafa;border-color:rgba(255,255,255,.3)}
+/* tarjeta del formulario */
+.contact.cx .form{padding:clamp(26px,3vw,40px);border-radius:26px;background:linear-gradient(180deg,rgba(255,255,255,.06),rgba(255,255,255,.02));border:1px solid rgba(196,181,253,.22);box-shadow:0 40px 100px -40px rgba(139,92,246,.55),inset 0 1px 0 rgba(255,255,255,.08);backdrop-filter:blur(10px)}
+.contact.cx .progress i{background:rgba(255,255,255,.12)}
+.contact.cx .progress i::after{background:linear-gradient(90deg,#7c3aed,#a78bfa)}
+.contact.cx .progress span{color:#fafafa}
+.contact.cx .step h3{font-family:'Archivo',var(--body);font-weight:800;font-stretch:125%;font-size:clamp(24px,2.2vw,32px);letter-spacing:-.025em;text-transform:none;line-height:1.05;margin:0 0 6px}
+.cx-hint{margin:0 0 22px;font-size:13px;color:var(--muted-d)}
+.contact.cx .step h3:not(:has(+ .cx-hint)){margin-bottom:22px}
+.contact.cx .field label{color:rgba(255,255,255,.82)}
+.contact.cx .field input,.contact.cx .field textarea{background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.14);color:#fafafa}
+.contact.cx .field input::placeholder,.contact.cx .field textarea::placeholder{color:rgba(255,255,255,.35)}
+.contact.cx .field input:focus,.contact.cx .field textarea:focus{border-color:#a78bfa;background:rgba(139,92,246,.08);box-shadow:0 0 0 4px rgba(139,92,246,.18)}
+.contact.cx .field input:-webkit-autofill{-webkit-text-fill-color:#fafafa;-webkit-box-shadow:0 0 0 40px #1a1726 inset;caret-color:#fafafa}
+.contact.cx .cur-toggle button{color:rgba(255,255,255,.6);border-color:rgba(255,255,255,.14)}
+.contact.cx .cur-toggle button[aria-pressed="true"]{background:#8b5cf6;color:#fff;border-color:#8b5cf6}
+.contact.cx .pills span{background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.14);color:#fafafa}
+.contact.cx .pills input:checked+span{background:linear-gradient(90deg,#7c3aed,#8b5cf6);border-color:transparent;color:#fff;box-shadow:0 8px 24px -8px rgba(139,92,246,.7)}
+.contact.cx .consent{color:var(--muted-d)} .contact.cx .consent a{color:#c4b5fd}
+.contact.cx .back{color:rgba(255,255,255,.7)}
+.contact.cx .btn.primary{background:linear-gradient(90deg,#7c3aed,#8b5cf6 55%,#a78bfa);color:#fff;border:0;box-shadow:0 14px 34px -12px rgba(139,92,246,.8)}
+.contact.cx .btn.primary:hover{filter:brightness(1.08);background:linear-gradient(90deg,#7c3aed,#8b5cf6 55%,#a78bfa)}
+.contact.cx .done .ok{background:linear-gradient(135deg,#7c3aed,#a78bfa);color:#fff}
+.contact.cx .done p{color:var(--muted-d)}
+.contact.cx .form-error{color:#fca5a5} .contact.cx .form-error a{color:#fff}
+.contact.cx .cur-toggle{background:rgba(255,255,255,.04);border-color:rgba(255,255,255,.14)}
