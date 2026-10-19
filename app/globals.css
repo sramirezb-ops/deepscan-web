@@ -1050,3 +1050,35 @@ button{font:inherit;color:inherit;background:none;border:0;cursor:pointer}
 .services.dark .card.dk{background:#141414;border:1px solid rgba(255,255,255,.1);box-shadow:0 -20px 60px rgba(0,0,0,.5),inset 0 1px 0 rgba(255,255,255,.06)}
 .services.dark .card{box-shadow:0 -20px 60px rgba(0,0,0,.5)}
 .services.dark .intro p{color:var(--muted-d)}
+
+/* Casos de éxito (estilo tarjetas con foto + cifras) */
+.cs{position:relative;padding:clamp(90px,11vw,150px) 0;background:#f4f2f9;color:#0a0a0a;overflow:hidden}
+.cs .eyebrow{color:var(--muted-l)}
+.cs-head{display:flex;justify-content:space-between;align-items:flex-end;gap:40px;margin-bottom:clamp(40px,5vw,64px)}
+.cs-t{margin:24px 0 0;font-family:'Archivo',var(--body);font-weight:800;font-stretch:125%;font-size:clamp(36px,5vw,80px);line-height:1;letter-spacing:-.035em}
+.cs-t .g{background:linear-gradient(90deg,#7c3aed,#8b5cf6 50%,#a78bfa);-webkit-background-clip:text;background-clip:text;color:transparent}
+.cs-side{max-width:340px}
+.cs-side p{margin:0 0 18px;font-size:16px;line-height:1.6;color:var(--muted-l)}
+.cs .stmt-link{color:#0a0a0a;opacity:1;transform:none;margin-top:0}
+.cs-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(14px,1.6vw,22px)}
+.cs-card{display:flex;flex-direction:column;border-radius:22px;overflow:hidden;background:#0e0d12;color:#fafafa;box-shadow:0 30px 60px -30px rgba(40,20,90,.45);transition:transform .5s var(--ease),box-shadow .5s var(--ease)}
+.cs-card:hover{transform:translateY(-6px);box-shadow:0 40px 70px -30px rgba(60,30,140,.55)}
+.cs-vis{position:relative;aspect-ratio:4/3.4;overflow:hidden;background:#1a1822}
+.cs-vis img{width:100%;height:100%;object-fit:cover;object-position:top left;transition:transform .8s var(--ease)}
+.cs-card:hover .cs-vis img{transform:scale(1.05)}
+.cs-vis::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(14,13,18,.15) 0%,rgba(14,13,18,0) 35%,rgba(14,13,18,.92) 100%);pointer-events:none}
+.cs-ph{position:absolute;inset:14px;display:grid;place-items:center;border:1.5px dashed rgba(255,255,255,.22);border-radius:14px;font-family:var(--mono);font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:rgba(255,255,255,.45);background:radial-gradient(circle at 30% 30%,rgba(139,92,246,.25),transparent 60%)}
+.cs-tag,.cs-n{position:absolute;top:14px;z-index:2;font-family:var(--mono);font-size:10.5px;letter-spacing:.14em;text-transform:uppercase}
+.cs-tag{left:14px;padding:6px 10px;border-radius:8px;background:rgba(14,13,18,.7);backdrop-filter:blur(6px);color:#fafafa}
+.cs-n{right:16px;top:20px;color:rgba(255,255,255,.75)}
+.cs-q{position:absolute;left:18px;right:18px;bottom:16px;z-index:2}
+.cs-q small{display:block;font-family:var(--mono);font-size:10.5px;letter-spacing:.14em;text-transform:uppercase;color:rgba(255,255,255,.6);margin-bottom:8px}
+.cs-q p{margin:0;font-size:clamp(15px,1.25vw,18px);line-height:1.35;font-weight:500}
+.cs-q em{font-style:normal;color:#c4b5fd}
+.cs-stats{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;padding:20px 18px 22px;border-top:1px solid rgba(255,255,255,.08)}
+.cs-stats b{display:block;font-family:'Archivo',var(--body);font-weight:900;font-stretch:125%;font-size:clamp(18px,1.55vw,24px);letter-spacing:-.03em;line-height:1;white-space:nowrap;background:linear-gradient(180deg,#e9e3ff,#a78bfa);-webkit-background-clip:text;background-clip:text;color:transparent}
+.cs-stats span{display:block;margin-top:6px;font-size:11.5px;color:rgba(255,255,255,.55)}
+/* Marcadores de boceto: datos por completar */
+.cs .ph{color:#c4b5fd;-webkit-text-fill-color:#c4b5fd;background:none;border-bottom:1px dashed rgba(196,181,253,.6)}
+@media (max-width:1024px){ .cs-grid{grid-template-columns:1fr 1fr} }
+@media (max-width:760px){ .cs-head{flex-direction:column;align-items:flex-start;gap:20px} .cs-grid{grid-template-columns:1fr} }
