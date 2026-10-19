@@ -1043,3 +1043,10 @@ button{font:inherit;color:inherit;background:none;border:0;cursor:pointer}
   .clients .band.b1{transform:rotate(-4deg)}
   .clients .band.b2{transform:rotate(2.5deg);margin-top:10px}
 }
+
+/* Servicios en oscuro (alterna con Clientes claro) */
+.services.dark{background:#0a0a0a;color:var(--white)}
+.services.dark .orbit .c{border-color:rgba(255,255,255,.4)}
+.services.dark .card.dk{background:#141414;border:1px solid rgba(255,255,255,.1);box-shadow:0 -20px 60px rgba(0,0,0,.5),inset 0 1px 0 rgba(255,255,255,.06)}
+.services.dark .card{box-shadow:0 -20px 60px rgba(0,0,0,.5)}
+.services.dark .intro p{color:var(--muted-d)}
