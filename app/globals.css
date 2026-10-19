@@ -978,6 +978,7 @@ button{font:inherit;color:inherit;background:none;border:0;cursor:pointer}
 @media (prefers-reduced-motion:reduce){ .dsh-aurora,.dsh-aurora i{animation:none} }
 
 /* Hero en diagonal (computador): SCAN bajo la última letra de DEEP, texto en el hueco de abajo a la izquierda */
+.hero.dsh.stagger{min-height:0}
 .hero.dsh.stagger .dsh-mark .ln{font-size:var(--f,min(26vw,40vh));letter-spacing:var(--ls,0);text-align:left;white-space:nowrap}
 .hero.dsh.stagger .dsh-mark .ln.r{margin-left:var(--x2,0)}
 .hero.dsh.stagger .dsh-foot{top:var(--ft,60vh);bottom:auto;right:auto;left:0;flex-direction:column;align-items:flex-start;gap:22px;box-sizing:content-box}
