@@ -942,7 +942,7 @@ button{font:inherit;color:inherit;background:none;border:0;cursor:pointer}
 @keyframes dshHue{0%{filter:hue-rotate(-14deg) saturate(1)}50%{filter:hue-rotate(6deg) saturate(1.15)}100%{filter:hue-rotate(18deg) saturate(1.05)}}
 .dsh-noise{position:absolute;inset:0;opacity:.06;pointer-events:none;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E")}
 .dsh-mark{position:absolute;left:0;right:0;top:clamp(80px,10.5vh,118px);padding:0 var(--pad);z-index:2;--s:-20%;will-change:transform,opacity}
-.dsh-mark .ln{display:block;font-family:var(--display);font-weight:400;font-size:min(26vw,40vh);line-height:.9;user-select:none;transition:transform .9s cubic-bezier(.2,.8,.2,1)}
+.dsh-mark .ln{display:block;font-family:'Archivo',var(--display);font-weight:900;font-stretch:125%;font-size:var(--fm,min(15vw,22vh));line-height:var(--lh,.73);white-space:nowrap;user-select:none;transition:transform .9s cubic-bezier(.2,.8,.2,1)}
 .dsh-mark .ln.r{text-align:right}
 .dsh-base .ln{color:transparent;-webkit-text-stroke:2px rgba(205,188,255,.92);filter:drop-shadow(0 0 6px rgba(139,92,246,.9)) drop-shadow(0 0 22px rgba(139,92,246,.5))}
 .dsh-fill{position:absolute;inset:0;padding:0 var(--pad);pointer-events:none;
@@ -966,7 +966,7 @@ button{font:inherit;color:inherit;background:none;border:0;cursor:pointer}
 @media (max-width:760px){
   .hero.dsh{min-height:640px}
   .dsh-mark{top:92px}
-  .dsh-mark .ln{font-size:min(36vw,30vh)}
+  .dsh-mark .ln{font-family:var(--display);font-weight:400;font-stretch:100%;font-size:min(36vw,30vh);line-height:.9}
   .dsh-base .ln{-webkit-text-stroke-width:1.4px}
   .dsh-foot{flex-direction:column;align-items:flex-start;gap:20px}
   .dsh-copy{max-width:none}
@@ -980,7 +980,8 @@ button{font:inherit;color:inherit;background:none;border:0;cursor:pointer}
 /* Hero en diagonal (computador): SCAN bajo la última letra de DEEP, texto en el hueco de abajo a la izquierda */
 .hero.dsh.stagger{min-height:0}
 .hero.dsh.stagger .dsh-mark .ln{font-size:var(--f,min(26vw,40vh));letter-spacing:var(--ls,0);text-align:left;white-space:nowrap}
-.hero.dsh.stagger .dsh-mark .ln.r{margin-left:var(--x2,0)}
+.hero.dsh.stagger .dsh-mark .ln.l{margin-left:var(--x0,0)}
+.hero.dsh.stagger .dsh-mark .ln.r{margin-left:calc(var(--x0,0px) + var(--x2,0px));margin-top:var(--y2,0)}
 .hero.dsh.stagger .dsh-foot{top:var(--ft,60vh);bottom:auto;right:auto;left:0;flex-direction:column;align-items:flex-start;gap:22px;box-sizing:content-box}
 .hero.dsh.stagger .dsh-copy{max-width:none}
 .hero.dsh.stagger h1{font-size:var(--hf,48px)}
