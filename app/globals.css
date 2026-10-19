@@ -1018,3 +1018,28 @@ button{font:inherit;color:inherit;background:none;border:0;cursor:pointer}
 .stmt-link:hover .arr{transform:translateX(4px)}
 @media (max-width:900px){ .stmt-g{grid-template-columns:1fr;gap:26px} .stmt-t{max-width:none} }
 @media (max-width:760px){ .stmt-num{font-size:clamp(90px,28vw,140px)} }
+
+/* Clientes: sección clara + dos cintas cruzadas con los logos */
+.clients.light{padding:clamp(90px,11vw,150px) 0 clamp(70px,9vw,120px);border-top:0;overflow:hidden;background:#f4f2f9;position:relative}
+.clients.light::before{content:"";position:absolute;inset:0;pointer-events:none;background-image:linear-gradient(rgba(10,10,10,.05) 1px,transparent 1px),linear-gradient(90deg,rgba(10,10,10,.05) 1px,transparent 1px);background-size:72px 72px;-webkit-mask-image:radial-gradient(ellipse at 50% 40%,#000 20%,transparent 75%);mask-image:radial-gradient(ellipse at 50% 40%,#000 20%,transparent 75%)}
+.cl-head{position:relative;display:flex;justify-content:space-between;align-items:flex-end;gap:40px}
+.cl-t{margin:24px 0 0;font-family:'Archivo',var(--body);font-weight:800;font-stretch:125%;font-size:clamp(34px,4.6vw,76px);line-height:1.02;letter-spacing:-.03em;max-width:15ch;color:#0a0a0a}
+.cl-t .o{color:transparent;-webkit-text-stroke:1.6px var(--acc)}
+.cl-head p{max-width:300px;margin:0;font-size:16px;line-height:1.6;color:var(--muted-l)}
+.cl-bands{position:relative;margin-top:clamp(60px,8vw,110px);padding:70px 0}
+.clients .marquee.band{width:112vw;margin-left:-6vw;-webkit-mask-image:none;mask-image:none;box-shadow:0 30px 60px -30px rgba(40,20,90,.35)}
+.clients .band.b1{background:#0a0a0a;transform:rotate(-4deg);position:relative;z-index:2}
+.clients .band.b2{background:linear-gradient(90deg,#7c3aed,#8b5cf6 50%,#a78bfa);transform:rotate(3.6deg);margin-top:-88px;position:relative;z-index:1}
+.clients .band .logo-cell{width:auto;height:88px;padding:0 clamp(34px,4vw,60px);margin:0;border:0;border-radius:0;position:relative;display:grid;place-items:center}
+.clients .band .logo-cell::after{content:"✦";position:absolute;right:-7px;top:50%;transform:translateY(-50%);font-size:13px;color:rgba(255,255,255,.45)}
+.clients .band .logo-cell img{max-height:28px;max-width:150px;filter:brightness(0) invert(1);opacity:.9}
+.clients .band .logo-cell:hover{background:transparent}
+.clients .band .logo-cell:hover img{opacity:1;transform:scale(1.08)}
+@media (max-width:760px){
+  .cl-head{flex-direction:column;align-items:flex-start;gap:18px}
+  .clients .band .logo-cell{height:72px}
+  .clients .band .logo-cell img{max-height:22px;max-width:110px}
+  .cl-bands{padding:34px 0}
+  .clients .band.b1{transform:rotate(-4deg)}
+  .clients .band.b2{transform:rotate(2.5deg);margin-top:10px}
+}
