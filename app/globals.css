@@ -1060,7 +1060,11 @@ button{font:inherit;color:inherit;background:none;border:0;cursor:pointer}
 .cs-side{max-width:340px}
 .cs-side p{margin:0 0 18px;font-size:16px;line-height:1.6;color:var(--muted-l)}
 .cs .stmt-link{color:#0a0a0a;opacity:1;transform:none;margin-top:0}
-.cs-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(14px,1.6vw,22px)}
+.cs-grid{display:flex;gap:clamp(14px,1.6vw,22px);overflow-x:auto;scroll-snap-type:x mandatory;scroll-behavior:smooth;scrollbar-width:none;padding:6px 2px 40px;margin:-6px -2px -40px;outline:none;cursor:grab}
+.cs-grid::-webkit-scrollbar{display:none}
+.cs-grid.drag{cursor:grabbing;scroll-snap-type:none;scroll-behavior:auto}
+.cs-grid.drag .cs-card{pointer-events:none}
+.cs-card{flex:0 0 calc((100% - 2 * clamp(14px,1.6vw,22px)) / 3);scroll-snap-align:start}
 .cs-card{display:flex;flex-direction:column;border-radius:22px;overflow:hidden;background:#0e0d12;color:#fafafa;box-shadow:0 30px 60px -30px rgba(40,20,90,.45);transition:transform .5s var(--ease),box-shadow .5s var(--ease)}
 .cs-card:hover{transform:translateY(-6px);box-shadow:0 40px 70px -30px rgba(60,30,140,.55)}
 .cs-vis{position:relative;aspect-ratio:4/3.4;overflow:hidden;background:#1a1822}
@@ -1080,8 +1084,8 @@ button{font:inherit;color:inherit;background:none;border:0;cursor:pointer}
 .cs-stats span{display:block;margin-top:6px;font-size:11.5px;color:rgba(255,255,255,.55)}
 /* Marcadores de boceto: datos por completar */
 .cs .ph{color:#c4b5fd;-webkit-text-fill-color:#c4b5fd;background:none;border-bottom:1px dashed rgba(196,181,253,.6)}
-@media (max-width:1024px){ .cs-grid{grid-template-columns:1fr 1fr} }
-@media (max-width:760px){ .cs-head{flex-direction:column;align-items:flex-start;gap:20px} .cs-grid{grid-template-columns:1fr} }
+@media (max-width:1024px){ .cs-card{flex-basis:calc((100% - clamp(14px,1.6vw,22px)) / 2)} }
+@media (max-width:760px){ .cs-head{flex-direction:column;align-items:flex-start;gap:20px} .cs-card{flex-basis:84%} }
 
 /* Por qué elegirnos: video cinematográfico en oscuro */
 .video.vx{position:relative;background:#060607;color:var(--white);overflow:hidden;padding:clamp(90px,11vw,150px) 0}
@@ -1117,3 +1121,10 @@ button{font:inherit;color:inherit;background:none;border:0;cursor:pointer}
   .vx-lbl{top:16px}.vx-lbl.tl{left:18px}.vx-lbl.tr{right:18px}
 }
 @media (prefers-reduced-motion:reduce){ .vx .vx-ring{animation:none} }
+
+.cs-ctrl{display:flex;align-items:center;gap:12px;margin-top:28px}
+.cs-bar{flex:1;height:2px;background:rgba(10,10,10,.12);border-radius:2px;overflow:hidden}
+.cs-bar i{display:block;height:100%;width:var(--w,33%);background:linear-gradient(90deg,#7c3aed,#a78bfa);transform:translateX(var(--x,0));transition:transform .3s var(--ease),width .3s}
+.cs-btn{width:48px;height:48px;border-radius:50%;border:1px solid rgba(10,10,10,.18);background:#fff;color:#0a0a0a;font-size:18px;display:grid;place-items:center;transition:background .3s,color .3s,opacity .3s,border-color .3s}
+.cs-btn:hover:not(:disabled){background:#0a0a0a;color:#fff;border-color:#0a0a0a}
+.cs-btn:disabled{opacity:.35;cursor:default}
