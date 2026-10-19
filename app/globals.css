@@ -977,6 +977,12 @@ button{font:inherit;color:inherit;background:none;border:0;cursor:pointer}
 }
 @media (prefers-reduced-motion:reduce){ .dsh-aurora,.dsh-aurora i{animation:none} }
 
+/* El nombre y el texto aparecen cuando ya están medidos (sin salto al cargar) */
+.hero.dsh:not(.ready) .dsh-mark,.hero.dsh:not(.ready) .dsh-foot{visibility:hidden}
+.hero.dsh.ready .dsh-mark,.hero.dsh.ready .dsh-foot{animation:dshIn .7s cubic-bezier(.2,.8,.2,1) backwards}
+.hero.dsh.ready .dsh-foot{animation-delay:.12s}
+@keyframes dshIn{from{opacity:0;transform:translate3d(0,14px,0)}to{opacity:1;transform:none}}
+
 /* Hero en diagonal (computador): SCAN bajo la última letra de DEEP, texto en el hueco de abajo a la izquierda */
 .hero.dsh.stagger{min-height:0}
 .hero.dsh.stagger .dsh-mark .ln{font-size:var(--f,min(26vw,40vh));letter-spacing:var(--ls,0);text-align:left;white-space:nowrap}
