@@ -1082,3 +1082,38 @@ button{font:inherit;color:inherit;background:none;border:0;cursor:pointer}
 .cs .ph{color:#c4b5fd;-webkit-text-fill-color:#c4b5fd;background:none;border-bottom:1px dashed rgba(196,181,253,.6)}
 @media (max-width:1024px){ .cs-grid{grid-template-columns:1fr 1fr} }
 @media (max-width:760px){ .cs-head{flex-direction:column;align-items:flex-start;gap:20px} .cs-grid{grid-template-columns:1fr} }
+
+/* Por qué elegirnos: video cinematográfico en oscuro */
+.video.vx{position:relative;background:#060607;color:var(--white);overflow:hidden;padding:clamp(90px,11vw,150px) 0}
+.video.vx::before{content:"";position:absolute;left:50%;top:58%;width:min(1400px,140vw);height:min(900px,100vw);transform:translate(-50%,-50%);background:radial-gradient(ellipse,rgba(139,92,246,.24),rgba(139,92,246,.06) 45%,transparent 70%);pointer-events:none}
+.vx .wrap{position:relative}
+.vx-head{display:flex;justify-content:space-between;align-items:flex-end;gap:40px;margin-bottom:clamp(36px,5vw,60px)}
+.vx-t{margin:24px 0 0;font-family:'Archivo',var(--body);font-weight:800;font-stretch:125%;font-size:clamp(36px,5vw,80px);line-height:1;letter-spacing:-.035em;max-width:13ch}
+.vx-t .g{background:linear-gradient(90deg,#c4b5fd,#8b5cf6 60%,#a78bfa);-webkit-background-clip:text;background-clip:text;color:transparent}
+.vx-head p{max-width:320px;margin:0;font-size:16px;line-height:1.6;color:var(--muted-d)}
+.vx .stage{max-width:none;border:1px solid rgba(196,181,253,.25);box-shadow:0 0 0 1px rgba(139,92,246,.15),0 50px 120px -30px rgba(139,92,246,.45)}
+.vx .stage::after{background:linear-gradient(180deg,rgba(6,6,7,.35),rgba(6,6,7,.05) 30%,rgba(6,6,7,.55))}
+.vx-lbl{position:absolute;top:22px;z-index:2;display:inline-flex;align-items:center;gap:8px;font-family:var(--mono);font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:rgba(255,255,255,.85)}
+.vx-lbl.tl{left:26px}.vx-lbl.tr{right:26px}
+.vx-lbl i{width:8px;height:8px;border-radius:50%;background:#ef4444;box-shadow:0 0 10px #ef4444;animation:vxBlink 1.6s infinite}
+@keyframes vxBlink{50%{opacity:.25}}
+.vx .play{width:150px;height:150px;background:transparent;color:#fff}
+.vx .play::before{display:none}
+.vx .vx-ring{position:absolute;inset:0;width:100%;height:100%;animation:vxSpin 14s linear infinite;fill:#fff;font-family:var(--mono);font-size:15.5px;letter-spacing:.32em}
+.vx .vx-tri{position:relative;width:74px;height:74px;padding:24px 22px 24px 26px;border-radius:50%;background:#fff;color:#0a0a0a;box-shadow:0 0 40px rgba(139,92,246,.6);margin:0;transition:transform .5s var(--ease)}
+.vx .play:hover .vx-tri{transform:scale(1.12)}
+@keyframes vxSpin{to{transform:rotate(360deg)}}
+.vx-reasons{list-style:none;padding:0;margin:clamp(30px,4vw,48px) 0 0;display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(12px,1.4vw,18px)}
+.vx-reasons li{position:relative;padding:26px 26px 28px;border:1px solid rgba(255,255,255,.1);border-radius:20px;background:linear-gradient(180deg,rgba(255,255,255,.04),rgba(255,255,255,.01));transition:border-color .4s,transform .5s var(--ease)}
+.vx-reasons li:hover{border-color:rgba(196,181,253,.45);transform:translateY(-4px)}
+.vx-reasons b{display:block;font-family:'Archivo',var(--body);font-weight:900;font-stretch:125%;font-size:44px;line-height:1;letter-spacing:-.04em;color:transparent;-webkit-text-stroke:1.2px #a78bfa;margin-bottom:18px}
+.vx-reasons h3{margin:0 0 8px;font-family:'Archivo',var(--body);font-weight:800;font-stretch:125%;font-size:clamp(18px,1.5vw,22px);letter-spacing:-.02em}
+.vx-reasons p{margin:0;font-size:15px;line-height:1.55;color:var(--muted-d)}
+@media (max-width:760px){
+  .vx-head{flex-direction:column;align-items:flex-start;gap:16px}
+  .vx-reasons{grid-template-columns:1fr}
+  .vx .play{width:120px;height:120px}
+  .vx .vx-tri{width:60px;height:60px;padding:19px 17px 19px 21px}
+  .vx-lbl{top:16px}.vx-lbl.tl{left:18px}.vx-lbl.tr{right:18px}
+}
+@media (prefers-reduced-motion:reduce){ .vx .vx-ring{animation:none} }
